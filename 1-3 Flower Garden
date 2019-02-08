@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	double soil , seeds , fence, spent ;
+
+	cout << "How much did you spent on the soil? ";
+	cin >> soil;
+	cout << "How much did you spent on the flower seeds? ";
+	cin >> seeds;
+	cout << "How much did you spent on the fence? ";
+	cin >> fence;
+	spent  = soil + seeds + fence;
+
+	cout << "You have spent $" << spent  << endl;
+
+	return 0; 
+}
+
