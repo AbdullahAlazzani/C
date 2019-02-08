@@ -1,0 +1,19 @@
+#include "pch.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	double numofbar , rate, earn ;
+
+	cout << "How many candy bars did you sell? ";
+	cin >> numofbar ;
+	cout << "How much each bar cost? ";
+	cin >> rate;
+	earn = numofbar * rate;
+
+	cout << "You have earned $" << earn << endl;
+
+	return 0; 
+}
