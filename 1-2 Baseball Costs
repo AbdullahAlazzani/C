@@ -1,0 +1,19 @@
+#include "pch.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	double numofball , cost, spent ;
+
+	cout << "How many baseballs purchased? ";
+	cin >> numofball ;
+	cout << "How much each ball cost? ";
+	cin >> cost ;
+	spent  = numofball * cost ;
+
+	cout << "You have spent $" << spent  << endl;
+
+	return 0; 
+}
