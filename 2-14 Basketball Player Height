@@ -1,0 +1,11 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int feet = 74 / 12;
+   int inches = 74 % 12;
+   cout << "The star player is " << feet << "/" << inches << " feet tall";
+    return 0;
+}
