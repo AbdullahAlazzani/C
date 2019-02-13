@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double purches = 95;
+    double statetax = 0.065 * purches;
+    double countrytax = 0.02 * purches;
+    double totaltax = statetax + countrytax;
+    cout << "The total tax on $" << purches << " purches is $" << totaltax << endl << endl;
+
+    return 0;
+}
