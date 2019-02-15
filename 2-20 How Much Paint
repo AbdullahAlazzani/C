@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   double gallon =340;
+   int surfaceArea = 6 * 100;
+   
+   cout << "Gallon if of paint needed for two coats: " << (2 * surfaceArea) / gallon << " gallon\n";
+
+    return 0;
+}
