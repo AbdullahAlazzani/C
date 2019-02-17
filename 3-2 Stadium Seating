@@ -1,0 +1,24 @@
+#include <iostream>
+#include <iomanip>
+using std::cout;
+using std::endl;
+using std::cin;
+
+const int A_TICKETS = 15;
+const int B_TICKETS = 12;
+const int C_TICKETS = 9;
+
+int main()
+{
+  int quantityA, quantityB, quantityC;
+  double totalCost;
+  cout << "How many class A tickets were purchased?";
+  cin >> quantityA;
+  cout << "How many class B tickets were purchased?";
+  cin >> quantityB;
+  cout << "How many class C tickets were purchased?";
+  cin >> quantityC;
+  totalCost = ((double) (quantityA * A_TICKETS)+(quantityB * B_TICKETS) + (quantityC * C_TICKETS));
+  cout << "Your total cost is: " << std::setprecision(2) << std::fixed << totalCost << endl;
+    return 0;
+}
