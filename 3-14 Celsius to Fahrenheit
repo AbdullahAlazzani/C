@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    const double Conversion_Patto = 1.8;
+    double celsius, fahrenheit;
+    
+    cout << "Please enter a celsius temperature: ";
+    cin >> celsius;
+    
+    fahrenheit = (Conversion_Patto * celsius) + 32;
+    cout << "The equivalent Fahrenheit temperature is:" << fahrenheit << endl;
+
+    return 0;
+}
