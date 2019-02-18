@@ -1,4 +1,9 @@
-#include "pch.h"
+//Using Program 1-1 as an example, write a program that calculates how much 
+a student Solving the organization earns during its fund-raising candy sale.
+The program should prompt the CandY Bar Sales user to enter the number of 
+candy bars sold and the amount the organization earns for Problem each bar
+sold. It should then calculate and display the total amount earned. 
+*******************************************************************************
 #include <iostream>
 
 using namespace std;
