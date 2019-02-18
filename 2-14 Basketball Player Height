@@ -1,3 +1,7 @@
+The star player of a high school basketball team is 74 inches tall.
+Write a program to compute and display the height in feet/inches form. 
+Hint: Try using the modulus and integer divide operat ions. 
+************************************************************************
 #include <iostream>
 
 using namespace std;
