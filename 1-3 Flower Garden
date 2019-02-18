@@ -11,11 +11,11 @@ int main()
 {
 	double soil , seeds , fence, spent ;
 
-	cout << "How much did you spent on the soil? ";
+	cout << "How much did you spend on the soil? ";
 	cin >> soil;
-	cout << "How much did you spent on the flower seeds? ";
+	cout << "How much did you spend on the flower seeds? ";
 	cin >> seeds;
-	cout << "How much did you spent on the fence? ";
+	cout << "How much did you spend on the fence? ";
 	cin >> fence;
 	spent  = soil + seeds + fence;
 
