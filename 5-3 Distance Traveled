@@ -1,0 +1,18 @@
+{
+	int speed, hours;
+
+	cout << "Enter the speed of a vehicle ( m/h): ";
+	cin >> speed;
+	cout << "Enter number of hours this vehicle has traveled: ";
+	cin >> hours;
+
+	cout << "Hour        Miles Traveled" << endl;
+	cout << "---------------------" << endl;
+
+	for (int i = 1, i <= hours; ++i)
+	{
+		cout << " " << i << "         " << speed * i << "  " << endl;
+	}
+
+
+}
