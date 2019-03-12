@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+  const int AIR   = 1100;
+  const int WATER = 4900;
+  const int STEEL = 16400;
+  int  choice;
+  double seconds, feet;
+  
+  cout << "Speed of Sound in Various Mediums\n";
+  cout << "  1. Air" << endl;
+  cout << "  2. Water" << endl;
+  cout << "  3. Steel" << endl;
+  cout << "Enter a menu number: ";
+  cin >> choice;
+  
+   if (choice < 1 || choice > 3)
+  {
+    cout << "Run the program again with a valid menu choice." <<endl;
+    return 0;
+  }
+  cout << "Enter the number of feet a sound wave will travel through the selected medium: ";
+  cin >> feet;
+  if (feet < 0)
+  {
+    std::cout << "Run the program again with valid input." << endl;
+    return 0;
+  }
+  
+ switch (choice)
+  {
+    case 1 : seconds = feet / AIR;
+             cout << "Time needed for a sound wave to travel " << feet << " feet through air: " << seconds <<endl;
+             break;
+    case 2 : seconds = feet / WATER;
+             cout << "Time needed for a sound wave to travel " << feet << " feet through water: " << seconds <<endl;
+             break;
+    case 3 : seconds = feet / STEEL;
+             cout << "Time needed for a sound wave to travel " << feet << " feet through steel: " << seconds <<endl;
+             break;
+  }
+  
+  return 0;
+}
+
+
