@@ -1,0 +1,18 @@
+//The formula to compute the area of a circle is area = PI * radius^2 
+so if a circle's radius doubles (i.e., is multiplied by 2), the circle's area 
+will be four times as large as before. Write a program that creates a table
+showing the radius and area for a circle whose radius begins with
+1 and continues doubling until it is 8. Use 3.14 for Pl. 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <iostream>
+using namespace std;
+int main() {
+double const pi = 3.14;
+cout<<"\nRaduys         Area"<<endl;
+cout<<"--------------------"<<endl;
+for (int i = 1; i <= 8; i*=2)
+{
+  cout<<" "<<i<<"             "<< pi * (i*i)<<endl;
+}
+}
