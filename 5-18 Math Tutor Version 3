@@ -1,0 +1,71 @@
+//This program started in Chapter 3 and was modified in Chapter 4. Starting with the version
+described in Chapter 4, modify the program again so that it displays a menu allowing the user
+to select an addition, subtraction, or multiplication problem. The final selection on the menu
+should let the user quit the program. After the user has finished the math problem, the program
+should display the menu again. This process must repeat until the user chooses to quit the program.
+If the user selects an item not on the menu, the program should print an error message and then
+display the menu again. 
+*****************************************************************************************************
+
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int      choice,
+           randomOne,
+           randomTwo,
+           userAnswer,
+           correctAnswer;
+
+  do
+  {
+
+    randomOne = rand() % (50 - 10 + 1) + 10;
+    randomTwo = rand() % (50 - 10 + 1) + 10;
+
+
+    cout << "\n Math Calculator\n 1. Addition Problem\n 2. Subtraction Problem\n 3. Multiplication Problem\n 4. Quit \n Enter your choice (1 - 4): "<<endl ;
+    cin >> choice;
+
+    if (choice < 1 || choice > 4){
+        cout <<"Please try agian and enter a vailed number"<<endl;
+    }
+
+     else if (choice > 0 && choice < 4)
+    {
+      cout << "Please solve the following problem: " << endl;
+      cout << " " << randomOne << endl;
+    }
+
+    switch(choice)
+    {
+      case 1: cout << "+" << randomTwo << endl;
+              correctAnswer = randomOne + randomTwo;
+              break;
+      case 2: cout << "-" << randomTwo << endl;
+              correctAnswer = randomOne - randomTwo;
+              break;
+      case 3: cout << "*" << randomTwo << endl;
+              correctAnswer = randomOne * randomTwo;
+              break;
+      case 4: cout << "Exiting the program." << endl;
+    }
+
+    if (choice > 0 && choice <= 4){
+        cout << "Enter your answer: ";
+        cin >> userAnswer;
+        if (userAnswer == correctAnswer)
+        {
+        cout << "Congratulations, that's the correct answer!" << endl;
+        }
+        else
+        {
+        cout << "The correct answer is: " << correctAnswer << endl;
+        }
+    }
+  }while(choice != 4);
+}
