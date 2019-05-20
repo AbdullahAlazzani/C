@@ -1,0 +1,110 @@
+Write a modular program that analyzes a year's worth of rainfall data. In addition to main,
+the program should have a getData function that accepts the total rainfall for each of 12
+month s from the user and stores it in a double array . It should also have four value-returning
+functions that compute and return to ma i n the total Rainfall, averageRa i nfall , dr i estMont h,
+and wettestMonth. These last two functions return the number of the month with the lowest and
+highest rainfall amoun ts, not the amoun t of rain that fell those months. Not ice that this month
+numbe r can be used to obtain the amoun t of rain that fell those months. This information should be
+used either by ma i n or by a di spl ayReport function called by main to print a summa ry rainfall
+report similar to the following: 2015 Rain Report for Neversnows County 
+Total ra i nfall: 23 .19 inches Average monthly rainfall: 1.93 inches 
+The least rain fel l in January w i th 0 .24 inches. 
+The most rain fell i n April with 4 .29 inches. 
+********************************************************************************************************
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+void   getData(  double [], int );
+double getTotal( double [], int );
+double getAverage( double [], int );
+int getLargest(  double [], int );
+int getSmallest( double [], int );
+void sort ( double a[] , int n )
+{
+	int i , j ;  double t ;
+	for( i   = 0 ; i < n - 1 ; i++ )
+		for( j = 0 ; j < n - 1 ; j++ )
+			if( a[ j ]  > a[ j + 1 ] )
+			{
+				t          = a[ j ];
+				a[ j     ] = a[ j + 1 ];
+				a[ j + 1 ] = t ;
+			}
+}
+bool search( double a[], int n, double key )
+{
+	bool b = false ;
+	for( int i = 0;  i < n; i++ )
+		if( a[ i ] == key )
+		{
+			b = true;
+			break;
+		}
+	return b ;
+}
+int main()
+{
+	int i,  n =  12 ;
+	double rainfall[ n ];
+	int largeIndex, smallIndex;//subscript of location holding larges, smallest values
+	getData( rainfall, n );
+
+	cout << fixed << showpoint << setprecision(2) << endl;
+	cout << "Total rainfall: "           << getTotal(   rainfall, n ) << " inches \n";
+	cout << "Average monthly rainfall: " << getAverage( rainfall, n ) << " inches \n";
+
+	smallIndex = getSmallest( rainfall, n );
+	largeIndex = getLargest(  rainfall, n );
+
+	cout << "The least rainfall is " << rainfall[ smallIndex ] << " inches \n";
+	cout << "The most  rainfall is " << rainfall[ largeIndex ] << " inches \n";
+
+	sort( rainfall, n ) ;
+	cout << "After sorting: \n" ;
+	for( i = 0; i < n; i++ ) cout << rainfall[ i ] << " " ;
+
+	if( search( rainfall, n, 0.0 ) == true ) cout << "\nMatch";
+	else                                     cout << "\nNo match";
+	return 0;
+}
+void getData( double array[], int n )
+{
+	for (int month = 0; month < n ; month++ )
+	{
+		cout << "Enter the rainfall for month " << month + 1 << " : ";
+		cin  >> array[month];
+	}
+}
+double getTotal( double array[], int n )
+{
+	double total = 0.0;
+	for (int pos = 0; pos < n ; pos++)
+		total += array[pos];
+	return total;
+}
+double getAverage( double array[], int n )
+{
+	double average = getTotal( array, n ) / n ;
+	return average;
+}
+int getLargest( double array[], int n )
+{
+	int largest = 0;  // position of the largest element so far
+	for (int pos = 1; pos < n ; pos++ )
+	{
+		if (array[pos] > array[largest])
+			largest = pos;
+	}
+	return largest;
+}
+int getSmallest( double array[], int n )
+{
+	int smallest = 0; // position of the smallest element so far
+	for (int pos = 1; pos < n; pos++)
+	{
+		if (array[pos] < array[smallest])
+			smallest = pos;
+	}
+	return smallest;
+}
