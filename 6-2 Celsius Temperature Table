@@ -1,0 +1,21 @@
+The formula for converting a temperature from Fahrenheit to Celsius is C = ~ (F - 32) 
+where F is the Fahrenheit temperature and C is the Celsius temperature. Write a function
+named ce l s i us that accepts a Fahrenheit temperature as an argument and returns the
+temperature converted to Celsius. Demonstrate the function by calling it in a loop that
+displays a table of the Fahrenheit temperatures O through 20 and their Celsius equivalents. 
+************************************************************************************************
+
+#include <iostream>
+using namespace std;
+
+double celsius (double f){
+return (5.0/9.0) * (f - 32);
+}
+int main (){
+cout << "Fahrnhit                  celsius"<<endl;
+cout << "-----------------------------------------"<< endl;
+
+for (int i = 0; i <= 20; ++i){
+    cout<<"  "<< i << "         "<< celsius(i)<<endl;
+}
+}
