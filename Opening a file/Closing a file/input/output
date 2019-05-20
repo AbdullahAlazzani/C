@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+	int i = 0, n ;
+	ifstream infile;
+	ofstream outfile;
+
+	// open a file for input and test to see if it opens correctly:
+
+	infile.open( "input.txt" ) ;
+	if( !infile )
+		cout << "Error opening input data file \n" ;
+	else
+	{
+		while( infile >> n )
+		{
+			cout << "i = " << i << ",  n = " << n << endl ;
+			i++;
+	  }
+		infile.close();
+	}
+	outfile.open( "output.txt" );
+	outfile << " Hello  World " ;
+	outfile.close();
+
+	return 0;
+}
