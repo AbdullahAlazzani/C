@@ -1,0 +1,113 @@
+/*********************************************************************
+** Challenge: Design an Inventory class that can hold information for 
+** an item in a retail store's inventory. The class should have the 
+** following private member variables.
+**
+** Variable Name   Description
+** itemNumber      An int that holds the item's number.
+** quantity        An int that holds the quantity of the item on hand.
+** cost            A double that holds the wholesale cost of the item
+** 
+** The class should also have a total of nine member functions, each
+** of which are described in the comments below.
+**
+** Demonstrate the class by writing a simple program that uses it. 
+** This program should validate the user inputs to ensure that 
+** negative values are not accepted for item number, quantity, or cost.
+*********************************************************************/
+
+#include <iostream>
+using namespace std;
+
+class Inventory
+{
+private:
+  int    itemNumber,
+         quantity;
+  double cost;
+public:
+  Inventory()
+  {
+    itemNumber = 0;
+    quantity = 0;
+    cost = 0;
+  }
+
+  Inventory(int i, int q, double c)
+  {
+    setItemNumber(i);
+    setQuantity(q);
+    setCost(c);
+  }
+
+  void setItemNumber(int i)
+  {
+    itemNumber = i;
+  }
+
+  void setQuantity(int q)
+  {
+    quantity = q;
+  }
+
+  void setCost(double c)
+  {
+    cost = c;
+  }
+
+  int getItemNumber()
+  {
+    return itemNumber;
+  }
+
+  int getQuantity()
+  {
+    return quantity;
+  }
+
+  int getCost()
+  {
+    return cost;
+  }
+
+  double getTotalCost()
+  {
+    return quantity * cost;
+  }
+};
+
+int main()
+{
+  int    item = 1,
+         quantity;
+  double cost;
+
+  //Get user input
+  if(item > 0)
+  {
+    std::cout << "\nEnter the item number: ";
+    std::cin >> item;
+  }
+
+  if(quantity > 0)
+  {
+    std::cout << "Enter the quantity: ";
+    std::cin >> quantity;
+  }
+
+  if(cost > 0)
+
+  {
+    cout << "Enter the cost per item: $";
+    cin >> cost;
+  }
+  //Create class and set member variables
+  Inventory inv1(item, quantity, cost);
+
+  //Display inventory values and total cost
+  cout << "\nInventory Data\n";
+  cout << "Item Number: " << inv1.getItemNumber() <<endl;
+  cout << "Quantity: " << inv1.getQuantity() <<endl;
+  cout << "Cost Per Item: $" << inv1.getCost() <<endl;
+  cout << "Total Cost: $" << inv1.getTotalCost() <<endl;
+}
