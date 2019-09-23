@@ -78,33 +78,36 @@ public:
 
 int main()
 {
-  int    item = 1,
+  int    item,
          quantity;
   double cost;
 
-  //Get user input
-  if(item > 0)
+  cout << "\nEnter the item number: ";
+  cin >> item;
+
+  while (item < 0)
   {
-    std::cout << "\nEnter the item number: ";
-    std::cin >> item;
+    cout << "\nInvalid number .. Try again: ";
+    cin >> item;
   }
 
-  if(quantity > 0)
+    cout << "Enter the quantity: ";
+    cin >> quantity;
+
+  while(quantity < 0)
   {
-    std::cout << "Enter the quantity: ";
-    std::cin >> quantity;
+    cout << "\nInvalid number .. Try again: ";
+    cin >> quantity;
   }
-
-  if(cost > 0)
-
-  {
     cout << "Enter the cost per item: $";
     cin >> cost;
+  while(cost < 0)
+  {
+     cout << "\nInvalid number .. Try again: ";
+    cin >> cost;
   }
-  //Create class and set member variables
   Inventory inv1(item, quantity, cost);
 
-  //Display inventory values and total cost
   cout << "\nInventory Data\n";
   cout << "Item Number: " << inv1.getItemNumber() <<endl;
   cout << "Quantity: " << inv1.getQuantity() <<endl;
